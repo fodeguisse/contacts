@@ -29,3 +29,24 @@ mkdir src/app/services
 
 # créer une nouvelle page:  ajout d'un nouveau contact
 ionic generate page add-contact
+
+# build de l'application: 
+ionic build --prod
+
+# Pour le déploiement sur un serveur web: 
+
+il faut Copier le contenu du dossier www généré dans le répertoire du serveur web (Apache, Nginx, etc.)
+
+# Déploiement sur une plateforme mobile 
+Android: 
+    Installer les prérequis Android SDK.
+    ajouter la plateforme Android: 
+        - ionic capacitor add android
+    ouvrir le projet dans Android Studio et compiler.
+
+OS :
+
+    Installez Xcode.
+    Ajoutez la plateforme iOS :
+        - ionic capacitor add ios
+    Ouvrir le projet dans Xcode et compiler.
