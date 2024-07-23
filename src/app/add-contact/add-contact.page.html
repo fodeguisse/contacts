@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter un Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input [(ngModel)]="newContact.firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input [(ngModel)]="newContact.lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Téléphone</ion-label>
+      <ion-input [(ngModel)]="newContact.phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="newContact.email"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="addContact()">Ajouter</ion-button>
+</ion-content>

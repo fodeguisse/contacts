@@ -1,13 +1,33 @@
-import { Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+
 
 export const routes: Routes = [
-  {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-  },
+
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'contacts',
     pathMatch: 'full',
   },
+  {
+    path: 'contacts',
+    loadComponent: () => import('./contacts/contacts.page').then( m => m.ContactsPage)
+  },
+  
+  {
+    path: 'contact-detail/:id',
+    loadComponent: () => import('./contact-detail/contact-detail.page').then( m => m.ContactDetailPage)
+  },
+  {
+    path: 'add-contact',
+    loadComponent: () => import('./add-contact/add-contact.page').then( m => m.AddContactPage)
+  },
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
